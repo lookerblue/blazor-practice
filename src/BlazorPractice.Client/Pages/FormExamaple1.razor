@@ -1,6 +1,6 @@
 ﻿@page "/form_example_1"
 
-<PageTitle>FormExamaple1</PageTitle>
+<PageTitle>@pageTitle</PageTitle>
 
 <div class="alert alert-warning">
     From: https://docs.microsoft.com/zh-cn/aspnet/core/blazor/forms-validation?view=aspnetcore-6.0#binding-a-form
@@ -27,8 +27,9 @@
 </div>*@
 <hr />
 
-<h1>FormExamaple1</h1>
+<h1>@pageTitle</h1>
 
 @code {
+    private string pageTitle = "窗体和验证 (1)";
 
 }
