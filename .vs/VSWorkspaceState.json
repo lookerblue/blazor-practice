@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src\\BlazorPractice.Client\\Shared"
+    "\\src"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\src\\BlazorPractice.sln",
   "PreviewInSolutionExplorer": false
 }
