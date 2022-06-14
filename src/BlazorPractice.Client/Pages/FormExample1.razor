@@ -1,0 +1,70 @@
+﻿@page "/form-example-1"
+@using Microsoft.Extensions.Logging
+@inject ILogger<FormExample1> Logger
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-warning">
+    <a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/forms-validation?view=aspnetcore-6.0#binding-a-form" target="_blank">Tutorial</a>
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<h4>绑定 Model</h4>
+
+<EditForm Model="@exampleModel" OnValidSubmit="@HandleValidSubmit" >
+
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="row g-2">
+        <div class="col-auto">
+            <input id="name" @bind-value="exampleModel.Name" class=" form-control" />
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+</EditForm>
+
+<h4 class="mt-4">绑定 EditContext</h4>
+
+<EditForm EditContext="@editContext" OnValidSubmit="@HandleValidSubmit">
+    
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    
+    <div class="row g-2">
+        <div class="col-auto">
+            <input id="name" @bind-value="exampleModel.Name" class=" form-control" />
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+</EditForm>
+
+@code {
+    private string pageTitle = "绑定窗体";
+
+    private ExampleModel exampleModel = new();
+
+    private EditContext? editContext;
+
+    protected override void OnInitialized()
+    {
+        editContext = new(exampleModel);
+    }
+
+    private void HandleValidSubmit()
+    {
+        Logger.LogInformation("HandleValidSubmit called");
+
+        // Process the valid form
+    }
+
+}
