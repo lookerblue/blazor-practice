@@ -10,6 +10,66 @@
 
 <h1>@pageTitle</h1>
 
+<h4>New Ship Entry Form</h4>
+
+<EditForm Model="@starship" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label class="form-label">Identifier:</label>
+            <InputText class="form-control" @bind-Value="starship.Identifier" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Description (optional):</label>
+            <InputTextArea class="form-control" @bind-Value="starship.Description" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Primary Classification:</label>
+            <InputSelect class="form-control" @bind-Value="starship.Classification">
+                <option value="">Select classification ...</option>
+                <option value="Exploration">Exploration</option>
+                <option value="Diplomacy">Diplomacy</option>
+                <option value="Defense">Defense</option>
+            </InputSelect>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Maximum Accommodation:</label>
+            <InputNumber class="form-control" @bind-Value="starship.MaximumAccommodation" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Engineering Approval:</label>
+            <div class="form-check">
+                @*<input class="form-check-input" type="checkbox" id="gridCheck">*@
+                <InputCheckbox class="form-check-input" @bind-Value="starship.IsValidatedDesign" id="gridCheck"/>
+                <label class="form-check-label" for="gridCheck">
+                    Yes
+                </label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Production Date:</label>
+            <InputDate class="form-control" @bind-Value="starship.ProductionDate" />
+        </div>
+        <div class="col-md-12">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </div>
+
+    
+
+</EditForm>
+
 @code {
     private string pageTitle = "窗体提交";
+
+    private Starship starship = new() { ProductionDate = DateTime.UtcNow };
+
+    private void HandleValidSubmit()
+    {
+        Logger.LogInformation("HandleValidSubmit called");
+
+        // Process the valid form
+    }
 }
