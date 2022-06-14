@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\BlazorPractice.Client",
+    "\\src\\BlazorPractice.Client\\Shared"
   ],
-  "SelectedNode": "\\src\\BlazorPractice.sln",
+  "SelectedNode": "\\src\\BlazorPractice.Client\\bin",
   "PreviewInSolutionExplorer": false
 }
