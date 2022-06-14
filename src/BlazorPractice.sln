@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorPractice.Client", "BlazorPractice.Client\BlazorPractice.Client.csproj", "{B7E024BB-DC2F-4AB4-A512-3085AB5F2BAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorPractice.Shared", "BlazorPractice.Shared\BlazorPractice.Shared.csproj", "{BD329CC7-1CC6-48CC-80B1-DDA0A419587C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorPractice.Shared", "BlazorPractice.Shared\BlazorPractice.Shared.csproj", "{BD329CC7-1CC6-48CC-80B1-DDA0A419587C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

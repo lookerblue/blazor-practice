@@ -1,0 +1,65 @@
+﻿@page "/form-example-3"
+@using Microsoft.Extensions.Logging
+@inject ILogger<FormExample2> Logger
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-warning">
+    来源同上
+</div>
+
+<h1>@pageTitle</h1>
+
+<h4>New Ship Entry Form</h4>
+
+<EditForm EditContext="@editContext" OnSubmit="@HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label class="form-label">Identifier:</label>
+            <InputText class="form-control" @bind-Value="starship.Identifier" />
+        </div>
+        <div class="col-md-12">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </div>
+
+</EditForm>
+
+@code {
+    private string pageTitle = "窗体提交2";
+
+    private Starship starship =
+        new()
+            {
+                Identifier = "NCC-1701",
+                Classification = "Exploration",
+                MaximumAccommodation = 150,
+                IsValidatedDesign = true,
+                ProductionDate = new DateTime(2245, 4, 11)
+            };
+    private EditContext? editContext;
+
+    protected override void OnInitialized()
+    {
+        editContext = new(starship);
+    }
+
+    private async Task HandleSubmit()
+    {
+        if (editContext != null && editContext.Validate())
+        {
+            Logger.LogInformation("HandleSubmit called: Form is valid");
+
+            // Process the valid form
+            // await ...
+            await Task.CompletedTask;
+        }
+        else
+        {
+            Logger.LogInformation("HandleSubmit called: Form is INVALID");
+        }
+    }
+}
