@@ -1,0 +1,29 @@
+﻿@page "/input-file"
+@inject IJSRuntime JSRuntime
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    来源同上
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<img id="showImageHere" />
+
+<InputFile OnChange="ResizeAndDisplayImageUsingStreaming" />
+
+@code {
+    private string pageTitle = "InputFile 预览图像";
+
+    private async Task ResizeAndDisplayImageUsingStreaming(InputFileChangeEventArgs e)
+    {
+        var imageFile = e.File;
+        var resizedImage = await imageFile.RequestImageFileAsync("image/jpg", 250, 250);
+        var jsImageStream = resizedImage.OpenReadStream();
+        var dotnetImageStream = new DotNetStreamReference(jsImageStream);
+        await JSRuntime.InvokeVoidAsync("setImageUsingStreaming", "showImageHere", dotnetImageStream);
+    }
+}
