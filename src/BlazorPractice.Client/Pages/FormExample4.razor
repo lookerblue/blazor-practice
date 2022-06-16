@@ -14,7 +14,10 @@
     </h5>
     <ul>
         <li>
-            ...
+           使用 EditContext 和 ValidationMessageStore 实例来验证表单域。
+        </li>
+        <li>
+            使用 EditContext 的 OnValidationRequested 事件处理程序执行自定义验证逻辑。
         </li>
     </ul>
 </div>
@@ -26,18 +29,28 @@
 <h4>Ship Holodecks</h4>
 
 <EditForm EditContext="editContext" OnValidSubmit="@HandleValidSubmit">
-    <label>
-        Type 1:
-        <InputCheckbox @bind-Value="holodeck.Type1" />
-    </label>
 
-    <label>
-        Type 2:
-        <InputCheckbox @bind-Value="holodeck.Type2" />
-    </label>
-
-    <button type="submit">Update</button>
-
+    <div class="row g-2">
+        <div class="col-auto">
+            <div class="form-check form-check-inline">
+                <InputCheckbox class="form-check-input" @bind-Value="holodeck.Type1" id="holodeckType1" />
+                <label class="form-check-label" for="holodeckType1">
+                    Type 1
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <InputCheckbox class="form-check-input" @bind-Value="holodeck.Type2" id="holodeckType2" />
+                <label class="form-check-label" for="holodeckType2">
+                    Type 2
+                </label>
+            </div>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </div>
+    @* ValidationSummary 无法显示验证信息 *@
+    @*<ValidationSummary />*@
     <ValidationMessage For="() => holodeck.Options" />
 
 </EditForm>
@@ -56,8 +69,7 @@
         messageStore = new(editContext);
     }
 
-    private void HandleValidationRequested(object? sender, 
-        ValidationRequestedEventArgs args)
+    private void HandleValidationRequested(object? sender, ValidationRequestedEventArgs args)
     {
         messageStore?.Clear();
 

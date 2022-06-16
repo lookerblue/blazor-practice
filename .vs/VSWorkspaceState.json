@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\BlazorPractice.Client",
+    "\\src\\BlazorPractice.Client\\Pages"
   ],
-  "SelectedNode": "\\src\\BlazorPractice.sln",
+  "SelectedNode": "\\src\\BlazorPractice.Client\\Pages\\FormExample5.razor",
   "PreviewInSolutionExplorer": false
 }
