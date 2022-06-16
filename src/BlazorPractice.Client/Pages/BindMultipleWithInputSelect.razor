@@ -1,0 +1,79 @@
+﻿@page "/bind-multiple-with-inputselect"
+@using System.ComponentModel.DataAnnotations 
+@using Microsoft.Extensions.Logging
+@inject ILogger<BindMultipleWithInputSelect> Logger 
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源同上
+    </p>
+    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+            多选组件的验证。
+        </li>
+    </ul>
+    <p class="mb-0">
+        多选，最少2个，最多3个。
+    </p>
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<EditForm EditContext="@editContext" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label class="form-label">Select classifications (Minimum: 2, Maximum: 3):</label>
+            <InputSelect class="form-control" @bind-Value="starship.SelectedClassification">
+                <option value="@Classification.Exploration">Exploration</option>
+                <option value="@Classification.Diplomacy">Diplomacy</option>
+                <option value="@Classification.Defense">Defense</option>
+                <option value="@Classification.Research">Research</option>
+            </InputSelect>
+        </div>
+        <div class="col-md-12">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </div>
+
+</EditForm>
+<br />
+<p>
+    Selected Classifications: 
+    @string.Join(", ", starship.SelectedClassification)
+</p>
+
+@code {
+
+    private string pageTitle = "使用 InputSelect 组件的多个选项选择";
+
+    private EditContext? editContext;
+    private Starship starship = new();
+
+    protected override void OnInitialized()
+    {
+        editContext = new(starship);
+    }
+
+    private void HandleValidSubmit()
+    {
+        Logger.LogInformation("HandleValidSubmit called");
+    }
+
+    private class Starship
+    {
+        [Required, MinLength(2), MaxLength(3)]
+        public Classification[] SelectedClassification { get; set; } = new[] { Classification.Diplomacy };
+    }
+
+    private enum Classification { Exploration, Diplomacy, Defense, Research }
+}

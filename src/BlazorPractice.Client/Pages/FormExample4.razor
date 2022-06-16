@@ -1,0 +1,92 @@
+﻿@page "/form-example-4"
+@using Microsoft.Extensions.Logging
+@implements IDisposable
+@inject ILogger<FormExample4> Logger
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：同上
+    </p>
+    <h5>
+        知识点：
+    </h5>
+    <ul>
+        <li>
+            ...
+        </li>
+    </ul>
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<h4>Ship Holodecks</h4>
+
+<EditForm EditContext="editContext" OnValidSubmit="@HandleValidSubmit">
+    <label>
+        Type 1:
+        <InputCheckbox @bind-Value="holodeck.Type1" />
+    </label>
+
+    <label>
+        Type 2:
+        <InputCheckbox @bind-Value="holodeck.Type2" />
+    </label>
+
+    <button type="submit">Update</button>
+
+    <ValidationMessage For="() => holodeck.Options" />
+
+</EditForm>
+
+@code {
+    private string pageTitle = "基本验证";
+
+    private EditContext? editContext;
+    private Holodeck holodeck = new();
+    private ValidationMessageStore? messageStore;
+
+    protected override void OnInitialized()
+    {
+        editContext = new(holodeck);
+        editContext.OnValidationRequested += HandleValidationRequested;
+        messageStore = new(editContext);
+    }
+
+    private void HandleValidationRequested(object? sender, 
+        ValidationRequestedEventArgs args)
+    {
+        messageStore?.Clear();
+
+        // Custom validation logic
+        if (!holodeck.Options)
+        {
+            messageStore?.Add(() => holodeck.Options, "Select at least one.");
+        }
+    }
+
+    private void HandleValidSubmit()
+    {
+        Logger.LogInformation("HandleValidSubmit called: Processing the form");
+
+        // Process the form
+    }
+
+    public class Holodeck
+    {
+        public bool Type1 { get; set; }
+        public bool Type2 { get; set; }
+        public bool Options => Type1 || Type2;
+    }
+
+    public void Dispose()
+    {
+        if (editContext is not null)
+        {
+            editContext.OnValidationRequested -= HandleValidationRequested;
+        }
+    }
+}

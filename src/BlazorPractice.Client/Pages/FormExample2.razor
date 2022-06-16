@@ -5,7 +5,20 @@
 <PageTitle>@pageTitle</PageTitle>
 
 <div class="alert alert-success">
-    来源同上
+    <p>
+        来源：同上
+    </p>
+    <h5>
+        知识点：
+    </h5>
+    <ul>
+        <li>
+            通过 Model 绑定窗体提交，并获得验证信息。
+        </li>
+        <li>
+            错误消息模板，注意观察 ProductionDate 的错误消息。
+        </li>
+    </ul>
 </div>
 
 <hr />
@@ -44,7 +57,7 @@
             <label class="form-label">Engineering Approval:</label>
             <div class="form-check">
                 @*<input class="form-check-input" type="checkbox" id="gridCheck">*@
-                <InputCheckbox class="form-check-input" @bind-Value="starship.IsValidatedDesign" id="gridCheck"/>
+                <InputCheckbox class="form-check-input" @bind-Value="starship.IsValidatedDesign" id="gridCheck" />
                 <label class="form-check-label" for="gridCheck">
                     Yes
                 </label>
@@ -52,7 +65,8 @@
         </div>
         <div class="col-md-6">
             <label class="form-label">Production Date:</label>
-            <InputDate class="form-control" @bind-Value="starship.ProductionDate" />
+            <InputDate class="form-control" @bind-Value="starship.ProductionDate" 
+                DisplayName="Production Date" ParsingErrorMessage="The {0} field has an incorrect date value." />
         </div>
         <div class="col-md-12">
             <button class="btn btn-primary" type="submit">Submit</button>
