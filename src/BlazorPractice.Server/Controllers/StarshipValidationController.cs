@@ -29,7 +29,7 @@ namespace BlazorPractice.Server.Controllers
                 {
                     ModelState.AddModelError(nameof(starship.Description),
                         "For a 'Defense' ship " +
-                        "classification, 'Description' is required.");
+                        "classification, 'Description' is required. ( 此验证消息来自 WebApi )");
                 }
                 else
                 {

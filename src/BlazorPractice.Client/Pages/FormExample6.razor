@@ -16,15 +16,12 @@
     <p>
         来源：同上
     </p>
-    <p>
-        ...
-    </p>
     <h5>
         知识点：
     </h5>
     <ul>
         <li>
-           ...
+           通过远程 WebApi 进行数据验证。
         </li>
         <li>
           ...
@@ -98,7 +95,7 @@
     private string? messageStyles = "visibility:hidden";
     private CustomValidation? customValidation;
     private Starship starship = new() { 
-        Identifier = "id",
+        Identifier = string.Empty,
         Description = string.Empty,
         Classification = "Defense",
         MaximumAccommodation = 10,
