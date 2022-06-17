@@ -6,10 +6,10 @@
 
 <div class="alert alert-success">
     <p>
-        来源：同上
+        来源：
     </p>
-    <h5>
-        知识点：
+    @*<h5>
+        知识点
     </h5>
     <ul>
         <li>
@@ -18,7 +18,7 @@
         <li>
             ...
         </li>
-    </ul>
+    </ul>*@
 </div>
 
 <hr />
@@ -33,21 +33,19 @@
 
     <div class="row g-3">
         <div class="col-md-12">
-            <p>
-                <InputRadioGroup @bind-Value="starship.Manufacturer">
-                    Manufacturer:
+            <InputRadioGroup @bind-Value="starship.Manufacturer">
+                Manufacturer:
+                <br>
+                @foreach (var manufacturer in (BlazorPractice.Shared.ComponentEnums.Manufacturer[])Enum.GetValues(typeof(BlazorPractice.Shared.ComponentEnums.Manufacturer)))
+                {
+                    <InputRadio Value="@manufacturer" />
+                    <text>&nbsp;</text>
+
+                    @manufacturer
+
                     <br>
-                    @foreach (var manufacturer in (BlazorPractice.Shared.ComponentEnums.Manufacturer[])Enum.GetValues(typeof(BlazorPractice.Shared.ComponentEnums.Manufacturer)))
-                    {
-                        <InputRadio Value="@manufacturer" />
-                        <text>&nbsp;</text>
-
-                        @manufacturer
-
-                        <br>
-                    }
-                </InputRadioGroup>
-            </p>
+                }
+            </InputRadioGroup>
         </div>
         <div class="col-md-12">
             <p>
