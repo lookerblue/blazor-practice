@@ -25,10 +25,8 @@ namespace BlazorPractice.Client
 
             messageStore = new(CurrentEditContext);
 
-            CurrentEditContext.OnValidationRequested += (s, e) =>
-                messageStore?.Clear();
-            CurrentEditContext.OnFieldChanged += (s, e) =>
-                messageStore?.Clear(e.FieldIdentifier);
+            CurrentEditContext.OnValidationRequested += (s, e) => messageStore?.Clear();
+            CurrentEditContext.OnFieldChanged += (s, e) => messageStore?.Clear(e.FieldIdentifier);
         }
 
         public void DisplayErrors(Dictionary<string, List<string>> errors)

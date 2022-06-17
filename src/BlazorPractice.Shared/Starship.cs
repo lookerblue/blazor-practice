@@ -23,5 +23,7 @@ namespace BlazorPractice.Shared
 
         [Required]
         public DateTime ProductionDate { get; set; }
+
+
     }
 }

@@ -1,0 +1,58 @@
+﻿@page "/form-example-7"
+@using Microsoft.Extensions.Logging
+@inject ILogger<FormExample7> Logger
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：同上
+    </p>
+    <h5>
+        知识点：
+    </h5>
+    <ul>
+        <li>
+           自定义输入组件。
+        </li>
+        <li>
+           捕捉输入事件。
+        </li>
+    </ul>
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<EditForm Model="@exampleModel" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="row g-2">
+        <div class="col-auto">
+           <CustomInputText @bind-Value="exampleModel.Name" class="form-control" />
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+</EditForm>
+
+<p>
+    CurrentValue: @exampleModel.Name
+</p>
+
+@code {
+    private string pageTitle = "输入事件";
+
+    private ExampleModel exampleModel = new();
+
+    private void HandleValidSubmit()
+    {
+        Logger.LogInformation("HandleValidSubmit called");
+
+        // Process the valid form
+    }
+}
