@@ -4,3 +4,5 @@
 /src/BlazorPractice.Client/obj
 /src/BlazorPractice.Shared/bin
 /src/BlazorPractice.Shared/obj
+/src/BlazorPractice.Server/bin
+/src/BlazorPractice.Server/obj
