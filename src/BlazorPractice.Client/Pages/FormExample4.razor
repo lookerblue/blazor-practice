@@ -14,10 +14,13 @@
     </h5>
     <ul>
         <li>
-           使用 EditContext 和 ValidationMessageStore 实例来验证表单域。
+            没有使用验证组件（DataAnnotationsValidator 或 CustomValidation）。
         </li>
         <li>
             使用 EditContext 的 OnValidationRequested 事件处理程序执行自定义验证逻辑。<code> editContext.OnValidationRequested += HandleValidationRequested; </code>
+        </li>
+        <li>
+           使用 ValidationMessageStore 存储、显示验证信息。
         </li>
     </ul>
 </div>
