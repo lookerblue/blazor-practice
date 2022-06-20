@@ -2,16 +2,44 @@
 @using Microsoft.Extensions.Logging
 @inject ILogger<FormExample8> Logger
 
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/forms-validation?view=aspnetcore-6.0#custom-validation-css-class-attributes" target="_blank">link</a>
+    </p>
+    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           ...
+        </li>
+    </ul>
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
 <EditForm EditContext="@editContext" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
-    <InputText id="name" @bind-Value="exampleModel.Name" />
+    <div class="row g-2">
+        <div class="col-auto">
+            <InputText id="name" @bind-Value="exampleModel.Name" class="form-control" />
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
 
-    <button type="submit">Submit</button>
 </EditForm>
 
 @code {
+    private string pageTitle = "自定义验证 CSS 类属性";
+
     private ExampleModel exampleModel = new();
     private EditContext? editContext;
 
