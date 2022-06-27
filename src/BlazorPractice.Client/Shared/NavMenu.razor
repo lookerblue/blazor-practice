@@ -11,93 +11,140 @@
     <nav class="flex-column">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
+                <i class="bi bi-house pr-2" aria-hidden="true"></i>  Home
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                <span class="bi bi-plus" aria-hidden="true"></span> Counter
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+                <span class="bi bi-bounding-box" aria-hidden="true"></span> Fetch data
             </NavLink>
         </div>
-        <hr class="bg-light mt-2" />
+        <hr class="border-light mt-2" />
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="todo">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> 生成待办事项 (Todo)
+                生成待办事项 (Todo)
             </NavLink>
         </div>
-        <hr class="bg-light mt-2" />
+        <hr class="border-light mt-2" />
+        <div class="nav-item-header">
+           <span class="bi bi-collection"></span> 窗体验证
+        </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="form-example-1">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体和验证 / 绑定窗体
+                绑定窗体
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="form-example-2">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体和验证 / 窗体提交1
+                窗体提交1
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="form-example-3">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体和验证 / 窗体提交2
+                窗体提交2
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="input-file">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体和验证 / InputFile
+                InputFile
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="bind-multiple-with-inputselect">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体和验证 / InputSelect
+                InputSelect
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="form-example-4">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体和验证 / 基本验证
+                基本验证
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="form-example-5">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体和验证 / 验证程序
+                验证程序
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="form-example-6">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体和验证 / 服务端验证
+                服务端验证
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="form-example-7">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体和验证 / 输入事件
+                输入事件
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="single-select-example">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体和验证 / 单选按钮
+                单选按钮
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="form-example-8">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体和验证 / 自定义验证CSS类
+                自定义验证CSS类
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="form-example-9">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体和验证 / 基于窗体验证启用提交按钮
+                基于窗体验证启用提交按钮
             </NavLink>
         </div>
+        <div class="nav-item-header">
+           <span class="bi bi-collection-fill"></span> 路由和导航
+        </div>
+        @*<div class="accordion accordion-flush">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体验证
+                    </div>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body p-0" @onclick="ToggleNavMenu">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        <span class="oi oi-list-rich" aria-hidden="true"></span> 窗体验证路由和导航
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="nav-item px-3">
+                            <NavLink class="nav-link" href="RouteParameter">
+                                <span class="oi oi-list-rich" aria-hidden="true"></span>  ...
+                            </NavLink>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <span class="oi oi-list-rich" aria-hidden="true"></span> ...
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                </div>
+            </div>
+        </div>*@
+
     </nav>
 </div>
 
 @code {
     private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string? NavMenuCssClass => collapseNavMenu ? "custom-collapse" : null;
 
     private void ToggleNavMenu()
     {

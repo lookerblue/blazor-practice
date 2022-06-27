@@ -1,0 +1,33 @@
+﻿@page "/RouteParameter/{text:bool?}"
+
+<PageTitle>@pageTitle</PageTitle>
+
+<h1>Blazor is @Text!</h1>
+
+<h4>
+    路由约束
+</h4>
+<code>
+    @@page "/user/{Id:int}"
+</code>
+<br />
+<code>
+    @@page "/user/{Id:int?}"
+</code>
+
+<p>
+    helleo
+</p>
+
+@code {
+    private string pageTitle = "路由与导航";
+
+    [Parameter]
+    public bool? Text { get; set; }
+
+    protected override void OnInitialized()
+    {
+        
+    }
+
+}

@@ -20,7 +20,7 @@
 
 .nav-item {
     font-size: 0.9rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1px;
 }
 
     .nav-item:first-of-type {
@@ -32,22 +32,34 @@
     }
 
     .nav-item ::deep a {
-        color: #d7d7d7;
+        color: rgba(255,255,255,0.60);
         border-radius: 4px;
-        height: 3rem;
-        display: flex;
+        height: 2rem;
+        /*display: flex;*/
         align-items: center;
-        line-height: 3rem;
+        line-height: 2rem;
+        padding-left: 2rem;
     }
 
-.nav-item ::deep a.active {
-    background-color: rgba(255,255,255,0.25);
+        .nav-item ::deep a.active {
+            background-color: rgba(255,255,255,0.25);
+            color: rgba(255,255,255);
+            font-weight: bold;
+        }
+
+        .nav-item ::deep a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+.nav-item-header{
     color: white;
+    padding-left: 1.6rem;
+    font-weight: bold;
 }
 
-.nav-item ::deep a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
+.custom-collapse{
+    display: none;
 }
 
 @media (min-width: 641px) {
@@ -55,8 +67,13 @@
         display: none;
     }
 
+    /* 导致在 NavMenu 中无法使用 Collapse 组件 */
     .collapse {
         /* Never collapse the sidebar for wide screens */
+        /*display: block;*/
+    }
+
+    .custom-collapse {
         display: block;
     }
 }
