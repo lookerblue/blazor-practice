@@ -20,7 +20,7 @@
 
 .nav-item {
     font-size: 0.9rem;
-    padding-bottom: 1px;
+    padding-bottom: 2px;
 }
 
     .nav-item:first-of-type {
@@ -32,7 +32,7 @@
     }
 
     .nav-item ::deep a {
-        color: rgba(255,255,255,0.60);
+        color: rgba(0,0,0,0.60);
         border-radius: 4px;
         height: 2rem;
         /*display: flex;*/
@@ -42,24 +42,25 @@
     }
 
         .nav-item ::deep a.active {
-            background-color: rgba(255,255,255,0.25);
-            color: rgba(255,255,255);
+            background-color: rgba(13,110,253,0.25);
+            color: rgba(0,0,0);
             font-weight: bold;
         }
 
         .nav-item ::deep a:hover {
-            background-color: rgba(255,255,255,0.1);
-            color: white;
+            background-color: rgba(13,110,253,0.1);
+            color: rgba(0,0,0);
         }
 
 .nav-item-header{
-    color: white;
     padding-left: 1.6rem;
     font-weight: bold;
 }
 
-.custom-collapse{
+.custom-collapse {
     display: none;
+    height: 100vh;
+    /*overflow: auto;*/
 }
 
 @media (min-width: 641px) {
