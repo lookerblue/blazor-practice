@@ -1,18 +1,18 @@
-/* /Shared/MainLayout.razor.rz.scp.css */
-#page[b-gh2khip13a] {
+/* /Pages/Layout1.razor.rz.scp.css */
+#page[b-v4qhkhahk7] {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
 }
 
-#page-header[b-gh2khip13a] {
+#page-header[b-v4qhkhahk7] {
     height: 3.5rem;
     background: aqua;
     flex-shrink: 0;
 }
 
-#page-body[b-gh2khip13a] {
+#page-body[b-v4qhkhahk7] {
     flex: 1;
     display: flex;
     flex-direction: row;
@@ -20,81 +20,79 @@
     position: relative;
 }
 
-#page-body-l[b-gh2khip13a] {
+#page-body-l[b-v4qhkhahk7] {
     background: red;
 }
 
-#page-body-r[b-gh2khip13a] {
+#page-body-r[b-v4qhkhahk7] {
     background: red;
 }
 
-#page-body-main[b-gh2khip13a] {
+#page-body-main[b-v4qhkhahk7] {
     background: cornflowerblue;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-#page-body-main-content[b-gh2khip13a] {
+#page-body-main-content[b-v4qhkhahk7] {
     background: cornflowerblue;
     flex: 1;
 }
 
-#page-body-main-footer[b-gh2khip13a] {
+#page-body-main-footer[b-v4qhkhahk7] {
     height: 2rem;
     background: #2eb26d;
     flex-shrink: 0;
 }
 
-#page-footer[b-gh2khip13a] {
+#page-footer[b-v4qhkhahk7] {
     height: 2rem;
     background: coral;
     flex-shrink: 0;
 }
 
-/* ���� <= 640 */
+/* 屏宽 <= 640 */
 @media (max-width: 640.98px) {
 
-    #page-body[b-gh2khip13a] {
+    #page-body[b-v4qhkhahk7] {
         flex-direction: column;
     }
 
-    #page-body-l[b-gh2khip13a]{
-        
+    #page-body-l[b-v4qhkhahk7] {
     }
 
-    #page-body-main[b-gh2khip13a] {
+    #page-body-main[b-v4qhkhahk7] {
         flex-grow: 0;
         flex-shrink: 0;
         flex-basis: 100%;
     }
 
-    #page-body-r[b-gh2khip13a] {
+    #page-body-r[b-v4qhkhahk7] {
         display: none;
     }
 }
 
-/* ���� >= 640 */
+/* 屏宽 >= 640 */
 @media (min-width: 641px) {
 
-    #page-body-l[b-gh2khip13a] {
+    #page-body-l[b-v4qhkhahk7] {
         width: 250px;
         position: sticky;
         top: 0;
         overflow-y: auto;
     }
 
-    #page-body-r[b-gh2khip13a] {
+    #page-body-r[b-v4qhkhahk7] {
         width: 200px;
         position: sticky;
         top: 0;
         overflow-y: auto;
     }
 
-    /* ����ʱ���� page-body-main-content ���ݹ����� */
-    #page-body-main[b-gh2khip13a], #page-body-main-content[b-gh2khip13a] {
+    /* 宽屏时设置 page-body-main-content 内容滚动。 */
+    #page-body-main[b-v4qhkhahk7], #page-body-main-content[b-v4qhkhahk7] {
         overflow: auto;
     }
-
-    
 }
+/* /Shared/MainLayout.razor.rz.scp.css */

@@ -22,10 +22,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Demoon/Code/blazor-practice/src/BlazorPractice.Client.Layout/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Demoon/Code/blazor-practice/src/BlazorPractice.Client.Layout/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -33,6 +29,14 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Demoon/Code/blazor-practice/src/BlazorPractice.Client.Layout/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Demoon/Code/blazor-practice/src/BlazorPractice.Client.Layout/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-mrybdzz519
+
+[C:/Users/Demoon/Code/blazor-practice/src/BlazorPractice.Client.Layout/Pages/Layout1.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGF5b3V0MS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-v4qhkhahk7
 
 [C:/Users/Demoon/Code/blazor-practice/src/BlazorPractice.Client.Layout/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
