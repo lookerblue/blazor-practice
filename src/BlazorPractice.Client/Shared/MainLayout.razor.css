@@ -1,3 +1,71 @@
+
+#page {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+#page-header {
+    height: 3.5rem;
+    background: aqua;
+    flex-shrink: 0;
+}
+
+#page-body {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    position: relative;
+}
+
+#page-body-l {
+    background: red;
+    width: 250px;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+}
+
+#page-body-r {
+    background: red;
+    width: 200px;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+}
+
+#page-body-main {
+    background: cornflowerblue;
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-body-main-content {
+    background: cornflowerblue;
+    flex: 1;
+    overflow: auto;
+}
+
+#page-body-main-footer {
+    height: 2rem;
+    background: #2eb26d;
+    flex-shrink: 0;
+}
+
+#page-footer {
+    height: 2rem;
+    background: coral;
+    flex-shrink: 0;
+}
+
+
+
+
+/*======================*/
 .page {
     position: relative;
     display: flex;
@@ -28,14 +96,14 @@ main {
         text-decoration: none;
     }
 
-    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
-        text-decoration: underline;
-    }
+        .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
+            text-decoration: underline;
+        }
 
-    .top-row ::deep a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+        .top-row ::deep a:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
 @media (max-width: 640.98px) {
     .top-row:not(.auth) {
@@ -57,24 +125,24 @@ main {
     }
 
     .sidebar {
-        width: 300px;
+        width: 280px;
         height: 100vh;
         position: sticky;
         top: 0;
-        /*overflow: auto;*/  /*为左边栏增加滚动*/
+        overflow: auto; /*为左边栏增加滚动*/
     }
 
     .top-row {
-        /*position: sticky;
+        position: sticky;
         top: 0;
-        z-index: 1;*/
+        z-index: 1;
     }
 
-    .top-row.auth ::deep a:first-child {
-        flex: 1;
-        text-align: right;
-        width: 0;
-    }
+        .top-row.auth ::deep a:first-child {
+            flex: 1;
+            text-align: right;
+            width: 0;
+        }
 
     .top-row, article {
         padding-left: 2rem !important;

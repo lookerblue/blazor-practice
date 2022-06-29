@@ -35,7 +35,7 @@
         color: rgba(0,0,0,0.60);
         border-radius: 4px;
         height: 2rem;
-        /*display: flex;*/
+        display: flex;
         align-items: center;
         line-height: 2rem;
         padding-left: 2rem;
@@ -57,11 +57,11 @@
     font-weight: bold;
 }
 
-.custom-collapse {
+/*.custom-collapse {
     display: none;
     height: 100vh;
-    /*overflow: auto;*/
-}
+    overflow: auto;
+}*/
 
 @media (min-width: 641px) {
     .navbar-toggler {
@@ -71,10 +71,10 @@
     /* 导致在 NavMenu 中无法使用 Collapse 组件 */
     .collapse {
         /* Never collapse the sidebar for wide screens */
-        /*display: block;*/
-    }
-
-    .custom-collapse {
         display: block;
     }
+
+    /*.custom-collapse {
+        display: block;
+    }*/
 }
