@@ -1,118 +1,32 @@
-﻿@*<div class="top-row ps-3 navbar navbar-dark bg-primary shadow">
+﻿
+<nav id="page-header" class="navbar navbar-expand-lg bg-primary shadow" style="z-index: 1000;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">BlazorPractice.Client</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="bi bi-text-indent-right" style="font-size: 1.8rem;"></span>
         </button>
+        <a class="navbar-brand" href="/">BlazorPractice</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            @*<span class="navbar-toggler-icon"></span>*@
+            <span class="bi bi-justify" style="font-size: 1.8rem;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/" Match="NavLinkMatch.Prefix">
+                         Home
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                     <NavLink class="nav-link" href="/Tutorial">
+                         Tutorial
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                     <NavLink class="nav-link" href="/#">
+                         About
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>*@
-
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <i class="bi bi-house pr-2 text-primary" aria-hidden="true"></i>  Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-lg text-warning" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="bi bi-bounding-box text-danger" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </div>
-        <hr class="my-2" />
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="todo">
-                生成待办事项 (Todo)
-            </NavLink>
-        </div>
-        <hr class="my-2" />
-        <div class="nav-item-header">
-           <i class="bi bi-collection text-primary"></i> 窗体验证
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="form-example-1">
-                绑定窗体
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="form-example-2">
-                窗体提交1
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="form-example-3">
-                窗体提交2
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="input-file">
-                InputFile
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="bind-multiple-with-inputselect">
-                InputSelect
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="form-example-4">
-                基本验证
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="form-example-5">
-                验证程序
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="form-example-6">
-                服务端验证
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="form-example-7">
-                输入事件
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="single-select-example">
-                单选按钮
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="form-example-8">
-                自定义验证CSS类
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="form-example-9">
-                基于窗体验证启用提交按钮
-            </NavLink>
-        </div>
-        <div class="nav-item-header">
-           <i class="bi bi-collection text-primary"></i> 路由和导航
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="RouteParameter">
-                ...
-            </NavLink>
-        </div>    
-
-    </nav>
-</div>
-
-@code {
-    private bool collapseNavMenu = true;
-
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
+</nav>
