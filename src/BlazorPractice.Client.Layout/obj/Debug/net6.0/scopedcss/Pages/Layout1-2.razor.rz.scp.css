@@ -1,0 +1,100 @@
+#page[b-k9g82chvs8] {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+#page-header[b-k9g82chvs8] {
+    /*height: 3.5rem;*/
+    background: aqua;
+    flex-shrink: 0;
+}
+
+#page-body[b-k9g82chvs8] {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    position: relative;
+}
+
+#page-body-l[b-k9g82chvs8] {
+    background: red;
+}
+
+#page-body-r[b-k9g82chvs8] {
+    background: red;
+}
+
+#page-body-main[b-k9g82chvs8] {
+    background: cornflowerblue;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-body-main-content[b-k9g82chvs8] {
+    background: cornflowerblue;
+    flex: 1;
+}
+
+#page-body-main-footer[b-k9g82chvs8] {
+    height: 2rem;
+    background: #2eb26d;
+    flex-shrink: 0;
+}
+
+#page-footer[b-k9g82chvs8] {
+    height: 2rem;
+    background: coral;
+    flex-shrink: 0;
+}
+
+/* 屏宽 <= 640 */
+@media (max-width: 640.98px) {
+
+    #page-body[b-k9g82chvs8] {
+        flex-direction: column;
+    }
+
+    #page-body-l[b-k9g82chvs8] {
+    }
+
+    #page-body-main[b-k9g82chvs8] {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 100%;
+    }
+
+    #page-body-r[b-k9g82chvs8] {
+        display: none;
+    }
+}
+
+/* 屏宽 >= 640 */
+@media (min-width: 641px) {
+
+    #page-body-l[b-k9g82chvs8] {
+        width: 250px;
+        position: sticky;
+        top: 0;
+        overflow-y: auto;
+    }
+
+    #page-body-r[b-k9g82chvs8] {
+        width: 200px;
+        position: sticky;
+        top: 0;
+        overflow-y: auto;
+    }
+
+    /* 宽屏时设置 page-body-main-content 内容滚动。 */
+    #page-body-main[b-k9g82chvs8], #page-body-main-content[b-k9g82chvs8] {
+        overflow: auto;
+    }
+
+    #staticBackdrop[b-k9g82chvs8]{
+        display: block;
+    }
+}
