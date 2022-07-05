@@ -28,12 +28,6 @@
 
 <br />
 
-<button class="btn btn-primary" @onclick="GetUriWithQueryParameter">
-    GetUriWithQueryParameter
-</button>
-
-<br />
-
 <p>Filter: @Filter</p>
 
 <p>Page: @Page</p>
@@ -50,6 +44,26 @@
     </ul>
 }
 
+<br />
+
+<button class="btn btn-primary" @onclick="GetUriWithQueryParameter">
+    GetUriWithQueryParameter
+</button>
+
+<div>
+    @TestString
+</div>
+
+<br />
+
+<h2>
+    使用添加或修改的查询字符串进行导航
+</h2>
+
+<code>
+    NavigationManager.NavigateTo(
+    NavigationManager.GetUriWithQueryParameter("name", "Morena Baccarin"));
+</code>
 
 @code {
     private string pageTitle = "查询字符串";
@@ -66,10 +80,13 @@
     [SupplyParameterFromQuery(Name = "star")]
     public string[]? Stars { get; set; }
 
+    public string? TestString{ get; set; }
+
     public void GetUriWithQueryParameter()
     {
-        Logger.LogInformation(NavigationManager.GetUriWithQueryParameter("page", 5));
-
+        //Logger.LogInformation(NavigationManager.GetUriWithQueryParameter("page", 5));
+        //TestString = string.Empty;
+        TestString = NavigationManager.GetUriWithQueryParameter("page", 5);
     }
 
 }

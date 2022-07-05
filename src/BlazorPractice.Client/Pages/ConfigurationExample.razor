@@ -1,0 +1,36 @@
+﻿@page "/configuration-example"
+@layout Layout
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/fundamentals/configuration?view=aspnetcore-6.0#app-settings-configuration" target="_blank">link</a>
+    </p>
+    <h5>
+        Notes
+    </h5>
+    <ul>
+        <li>
+           Blazor WebAssembly 应用中的配置和设置文件对用户可见。 请勿在 Blazor WebAssembly 应用的配置或文件中存储应用机密、凭据或任何其他敏感数据。
+           <a href="/appsettings.json">查看 appsettings.json </a>
+        </li>
+    </ul>
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<h3 style="font-size:@Configuration["h1FontSize"]">
+    Configuration example
+</h3>
+
+@code {
+    private string pageTitle = "读取配置";
+
+    
+
+}

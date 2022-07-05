@@ -1,0 +1,43 @@
+﻿@page "/authentication-config"
+@layout Layout
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/fundamentals/configuration?view=aspnetcore-6.0#authentication-configuration" target="_blank">link</a>
+    </p>
+    
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<p>
+    wwwroot/appsettings.json
+</p>
+<code>
+{
+  "Local": {
+    "Authority": "{AUTHORITY}",
+    "ClientId": "{CLIENT ID}"
+  }
+}
+</code>
+<p>
+    Program.cs
+</p>
+<code>
+    builder.Services.AddOidcAuthentication(options =>
+    builder.Configuration.Bind("Local", options.ProviderOptions));
+</code>
+
+@code {
+    private string pageTitle = "身份认证配置";
+
+    
+
+}
