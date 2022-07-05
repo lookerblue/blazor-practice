@@ -1,11 +1,11 @@
-﻿@page "/route-parameter/{text?}"
+﻿@page "/route-constraints"
 @layout Layout
 
 <PageTitle>@pageTitle</PageTitle>
 
 <div class="alert alert-success">
     <p>
-        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/fundamentals/routing?view=aspnetcore-6.0" target="_blank">link</a>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/fundamentals/routing?view=aspnetcore-6.0#route-constraints" target="_blank">link</a>
     </p>
     <h5>
         知识点
@@ -23,14 +23,6 @@
 
 <br />
 
-<h4>Blazor is @Text!</h4>
-
-<br />
-
-@*<h3>
-    路由约束
-</h3>
-
 <code>
     @@page "/user/{Id:int}"
 </code>
@@ -38,27 +30,21 @@
 <code>
     @@page "/user/{Id:int?}"
 </code>
+<br />
 <code>
     @@page "/user/{Id:int}/{Option:bool?}"
 </code>
 <p>
     
-</p>*@
+</p>
 
 @code {
-    private string pageTitle = "路由参数";
-
-    [Parameter]
-    public string? Text { get; set; }
+    private string pageTitle = "路由约束";
 
     //protected override void OnInitialized()
     //{
     //    Text = Text ?? "fantastic";
     //}
 
-    protected override void OnParametersSet()
-    {
-        Text = Text ?? "fantastic";
-    }
 
 }

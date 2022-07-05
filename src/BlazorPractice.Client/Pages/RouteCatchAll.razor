@@ -1,0 +1,37 @@
+﻿@page "/route-catch-all/{*pageRoute}"
+@layout Layout
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/fundamentals/routing?view=aspnetcore-6.0#catch-all-route-parameters" target="_blank">link</a>
+    </p>
+    <p>
+        使用地址：<a href="/route-catch-all/this/is/a/test">/route-catch-all/this/is/a/test</a>，观察 PageRoute 值。
+    </p>
+    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           ...
+        </li>
+    </ul>
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<h4>PageRout: @PageRoute</h4>
+
+@code {
+    private string pageTitle = "catch-all 路由参数";
+
+    [Parameter]
+    public string? PageRoute { get; set; }
+
+
+
+}

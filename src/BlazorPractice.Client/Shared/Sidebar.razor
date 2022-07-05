@@ -1,4 +1,6 @@
-﻿<div class="collapse" id="sidebar" @onclick="CollapseSidebar">
+﻿@inject ILogger<Sidebar> Logger
+
+<div class="collapse" id="sidebar" @onclick="CollapseSidebar">
     <nav class="flex-column">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
@@ -88,21 +90,38 @@
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="/route-parameter">
-                ...
+                路由参数
+            </NavLink>
+            <NavLink class="nav-link" href="/route-constraints">
+                路由约束
+            </NavLink>
+            <NavLink class="nav-link" href="/route-catch-all">
+                catch-all 路由参数
+            </NavLink>
+            <NavLink class="nav-link" href="/navigate">
+                位置更改
+            </NavLink>
+            <NavLink class="nav-link" href="/search">
+                查询字符串
             </NavLink>
         </div>    
     </nav>
 </div>
 
 @code {
+    private bool collapsSidebar = false;
 
-    private bool collapsSidebar = true;
-
-    private string? SidebarCssClass => collapsSidebar ? "collapse" : "collapse show";
+    //private string? SidebarCssClass => collapsSidebar ? "" : "show";
 
     private void CollapseSidebar()
     {
-        collapsSidebar = !collapsSidebar;
+        //Logger.LogInformation(collapsSidebar.ToString());
+        //collapsSidebar = true;
+
+        //collapsSidebar = !collapsSidebar;
+        //Logger.LogInformation(SidebarCssClass);
+
+        //Logger.LogInformation("Sidebar Clicked");
     }
 
 }

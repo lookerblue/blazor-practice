@@ -1,0 +1,75 @@
+﻿@page "/search"
+@layout Layout
+@inject NavigationManager NavigationManager
+@inject ILogger<Search> Logger
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/fundamentals/routing?view=aspnetcore-6.0#query-strings" target="_blank">link</a>
+    </p>
+    <p>
+        使用地址 ：<a href="/search?filter=scifi%20stars&page=3&star=LeVar%20Burton&star=Gary%20Oldman">/search?filter=scifi%20stars&page=3&star=LeVar%20Burton&star=Gary%20Oldman</a>
+    </p>
+    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           ...
+        </li>
+    </ul>
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<br />
+
+<button class="btn btn-primary" @onclick="GetUriWithQueryParameter">
+    GetUriWithQueryParameter
+</button>
+
+<br />
+
+<p>Filter: @Filter</p>
+
+<p>Page: @Page</p>
+
+@if (Stars is not null)
+{
+    <p>Assignees:</p>
+
+    <ul>
+        @foreach (var name in Stars)
+        {
+            <li>@name</li>
+        }
+    </ul>
+}
+
+
+@code {
+    private string pageTitle = "查询字符串";
+
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public string? Filter { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public int? Page { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "star")]
+    public string[]? Stars { get; set; }
+
+    public void GetUriWithQueryParameter()
+    {
+        Logger.LogInformation(NavigationManager.GetUriWithQueryParameter("page", 5));
+
+    }
+
+}

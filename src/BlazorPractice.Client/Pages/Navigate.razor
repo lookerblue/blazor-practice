@@ -1,0 +1,56 @@
+﻿@page "/navigate"
+@layout Layout
+@using Microsoft.Extensions.Logging 
+@implements IDisposable
+@inject ILogger<Navigate> Logger
+@inject NavigationManager NavigationManager
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/fundamentals/routing?view=aspnetcore-6.0#location-changes" target="_blank">link</a>
+    </p>
+    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           处理 LocationChanged 事件
+        </li>
+    </ul>
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<button class="btn btn-primary" @onclick="NavigateToCounterComponent">
+    Navigate to the Counter component
+</button>
+
+@code {
+    private string pageTitle = "位置更改";
+
+    private void NavigateToCounterComponent()
+    {
+        NavigationManager.NavigateTo("counter");
+    }
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.LocationChanged += HandleLocationChanged;
+    }
+
+    private void HandleLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        Logger.LogInformation("URL of new location: {Location}", e.Location);
+    }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= HandleLocationChanged;
+    }
+
+
+}
