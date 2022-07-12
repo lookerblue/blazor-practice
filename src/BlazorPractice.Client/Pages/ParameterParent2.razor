@@ -1,0 +1,55 @@
+﻿@page "/parameter-parent-2"
+@layout Layout
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/components/?view=aspnetcore-6.0#component-parameters" target="_blank">link</a>
+    </p>
+@*    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           ...
+        </li>
+    </ul>*@
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<br />
+
+<div style="flex-direction: row;">
+
+<ParameterChild Title="@title" />
+
+<ParameterChild Title="@GetTitle()" />
+
+<ParameterChild Title="@DateTime.Now.ToLongDateString()" />
+
+<ParameterChild Title="@panelData.Title" />
+
+</div>
+
+@code{
+
+    private string pageTitle = "组件参数";
+
+    private string title = "From Parent field";
+    private PanelData panelData = new();
+
+    private string GetTitle()
+    {
+        return "From Parent method";
+    }
+
+    private class PanelData
+    {
+        public string Title { get; set; } = "From Parent object";
+    }
+
+}
