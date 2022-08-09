@@ -1,0 +1,33 @@
+﻿@page "/attribute-order-parent-1"
+@layout Layout
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/components/?view=aspnetcore-6.0#attribute-splatting-and-arbitrary-parameters" target="_blank">link</a>
+    </p>
+    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           在元素上展开 @@attributes 时，将从右到左（从最后一个到第一个）。
+        </li>
+        <li>
+           本例输出 <xmp><div extra="5" /></xmp> 而非 <xmp><div extra="10" /></xmp>
+        </li>
+    </ul>
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<br />
+
+<AttributeOrderChild1 extra="10" />
+
+@code{
+    private string pageTitle = "任意参数";
+}

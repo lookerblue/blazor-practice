@@ -5,6 +5,8 @@
 
     <h1>Render child content</h1>
 
+    <h4>使用 for 循环</h4>
+
     @for (int c = 0; c < 3; c++)
     {
         var current = c;
@@ -14,6 +16,8 @@
         </RenderFragmentChild>
     }
 
+     <h4>使用 foreach 循环</h4>
+
     @foreach (var c in Enumerable.Range(0, 3))
     {
         <RenderFragmentChild>
@@ -21,7 +25,7 @@
         </RenderFragmentChild>
     }
 
-    <h1>Hello, world!</h1>
+    <h4>任意位置呈现片段</h4>
 
     @RenderWelcomeInfo
 

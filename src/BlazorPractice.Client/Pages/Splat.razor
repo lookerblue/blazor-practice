@@ -1,0 +1,52 @@
+﻿@page "/splat"
+@layout Layout
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/components/?view=aspnetcore-6.0#attribute-splatting-and-arbitrary-parameters" target="_blank">link</a>
+    </p>
+@*    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           ...
+        </li>
+    </ul>*@
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<br />
+
+<input id="useIndividualParams"
+       maxlength="@maxlength"
+       placeholder="@placeholder"
+       required="@required"
+       size="@size" />
+
+<input id="useAttributesDict"
+       @attributes="InputAttributes" />
+
+@code {
+
+    private string pageTitle = "属性展开 (attribute splatting)";
+
+    private string maxlength = "10";
+    private string placeholder = "Input placeholder text";
+    private string required = "required";
+    private string size = "50";
+
+    private Dictionary<string, object> InputAttributes { get; set; } =
+        new()
+        {
+            { "maxlength", "10" },
+            { "placeholder", "Input placeholder text" },
+            { "required", "required" },
+            { "size", "50" }
+        };
+}

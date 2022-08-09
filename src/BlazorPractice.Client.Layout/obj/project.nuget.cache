@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/z8dkDpry2oiOEkeaAEH974Tw2+S8qeArV9ZD4l/iSFXJoGpJZiaNU0QU8bGbtGNQcFKCFq38OpJJjs8EABYTw==",
+  "dgSpecHash": "GlSUYlsgBsOU1dAeklzTAH/I9d9x9TxRGAnnWFgGoZGEkGonypqZHrUdIdZHCu7EcwoaqkPI6LYCa1MPlLD8hA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Demoon\\Code\\blazor-practice\\src\\BlazorPractice.Client.Layout\\BlazorPractice.Client.Layout.csproj",
   "expectedPackageFiles": [
@@ -33,7 +33,7 @@
     "C:\\Users\\Demoon\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Demoon\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\Demoon\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\Demoon\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.6\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.6.nupkg.sha512"
+    "C:\\Users\\Demoon\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.7\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.7.nupkg.sha512"
   ],
   "logs": []
 }

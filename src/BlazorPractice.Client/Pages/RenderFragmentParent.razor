@@ -1,6 +1,28 @@
 ﻿@page "/render-fragment-parent-1"
 @layout Layout
 
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/components/?view=aspnetcore-6.0#child-content-render-fragments" target="_blank">link</a>
+    </p>
+    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           必须按约定将接收 RenderFragment 内容的属性命名为 ChildContent。
+        </li>
+    </ul>
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<br />
+
 <div style="flex-direction: row;">
 
     <h1>Render child content</h1>
@@ -11,3 +33,7 @@
     </RenderFragmentChild>
 
 </div>
+
+@code{
+    private string pageTitle = "呈现片段";
+}

@@ -1,0 +1,45 @@
+﻿@page "/expander-example-2"
+@layout Layout
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/components/?view=aspnetcore-6.0#overwritten-parameters" target="_blank">link</a>
+    </p>
+    @*<h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           第一个 Expander 组件在可能可变的 RenderFragment 中设置子内容，因此在父组件中调用 StateHasChanged 会自动重新呈现该组件，并可能将 Expanded 的值覆盖为其初始值 true。
+        </li>
+        <li>
+            第二个 Expander 组件未设置子内容。 因此，不存在可能可变的 RenderFragment。 在父组件中调用 StateHasChanged 不会自动呈现子内容，因此组件的 Expanded 值不会被覆盖。
+        </li>
+    </ul>*@
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<br />
+
+<Expander2 Expanded="true">
+    Expander this content
+</Expander2>
+
+<Expander2 Expanded="true">
+    
+</Expander2>
+
+<button @onclick="StateHasChanged">
+    Call StateHasChanged
+</button>
+
+@code{
+
+    private string pageTitle = "重写参数2";
+
+}
