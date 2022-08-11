@@ -1,0 +1,36 @@
+﻿@page "/reference-parent-1"
+@layout Layout
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/components/?view=aspnetcore-6.0#capture-references-to-components" target="_blank">link</a>
+    </p>
+@*    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           ...
+        </li>
+    </ul>*@
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<br />
+
+<button @onclick="@(() => childComponent?.ChildMethod(5))">
+    Call <code>ReferenceChild.ChildMethod</code> with an argument of 5
+</button>
+
+<ReferenceChild @ref="childComponent" />
+
+@code {
+    private string pageTitle = "捕捉组件引用";
+
+    private ReferenceChild? childComponent;
+}

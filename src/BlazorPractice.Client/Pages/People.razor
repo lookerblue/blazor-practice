@@ -1,0 +1,71 @@
+﻿@page "/people"
+@using System.Timers
+@implements IDisposable
+@layout Layout
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/components/?view=aspnetcore-6.0#use-key-to-control-the-preservation-of-elements-and-components" target="_blank">link</a>
+    </p>
+@*    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           ...
+        </li>
+    </ul>*@
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<br />
+
+@foreach (var person in people)
+{
+    <Details @key="person" Data="@person.Data" />
+}
+
+@code{
+    private string pageTitle = "@key";
+
+    private Timer timer = new Timer(3000);
+
+    public List<Person> people =
+        new()
+        {
+            { new Person { Data = "Person 1" } },
+            { new Person { Data = "Person 2" } },
+            { new Person { Data = "Person 3" } }
+        };
+
+    protected override void OnInitialized()
+    {
+        timer.Elapsed += (sender, eventArgs) => OnTimerCallback();
+        timer.Start();
+    }
+
+    private void OnTimerCallback()
+    {
+        _ = InvokeAsync(() =>
+        {
+            people.Insert(0,
+                new Person
+                {
+                    Data = $"INSERTED {DateTime.Now.ToString("hh:mm:ss tt")}"
+                });
+            StateHasChanged();
+        });
+    }
+
+    public void Dispose() => timer.Dispose();
+
+    public class Person
+    {
+        public string? Data { get; set; }
+    }
+}

@@ -1,0 +1,75 @@
+﻿@page "/receive-notifications"
+@implements IDisposable
+@inject NotifierService Notifier
+@inject TimerService Timer
+@layout Layout
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/components/?view=aspnetcore-6.0#invoke-component-methods-externally-to-update-state" target="_blank">link</a>
+    </p>
+@*    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           ...
+        </li>
+    </ul>*@
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<h1>Receive Notifications</h1>
+
+<h2>Timer Service</h2>
+
+<button @onclick="StartTimer">Start Timer</button>
+
+<h2>Notifications</h2>
+
+<p>
+    Status:
+    @if (lastNotification.key is not null)
+    {
+        <span>@lastNotification.key = @lastNotification.value</span>
+    }
+    else
+    {
+        <span>Awaiting first notification</span>
+    }
+</p>
+
+@code {
+    private string pageTitle = "调用外部方法更新状态组件";
+
+    private (string key, int value) lastNotification;
+
+    protected override void OnInitialized()
+    {
+        Notifier.Notify += OnNotify;
+    }
+
+    public async Task OnNotify(string key, int value)
+    {
+        await InvokeAsync(() =>
+        {
+            lastNotification = (key, value);
+            StateHasChanged();
+        });
+    }
+
+    private async Task StartTimer()
+    {
+        await Timer.Start();
+    }
+
+    public void Dispose()
+    {
+        Notifier.Notify -= OnNotify;
+    }
+}

@@ -33,4 +33,12 @@ builder.Configuration.Add(memoryConfig);
 
 #endregion
 
+#region
+
+builder.Services.AddSingleton<NotifierService>();
+builder.Services.AddSingleton<TimerService>();
+
+#endregion
+
+
 await builder.Build().RunAsync();
