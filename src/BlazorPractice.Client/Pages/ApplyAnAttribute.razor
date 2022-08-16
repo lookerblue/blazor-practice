@@ -1,0 +1,37 @@
+﻿@page "/apply-an-attribute"
+@layout Layout
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/components/?view=aspnetcore-6.0#apply-an-attribute" target="_blank">link</a>
+    </p>
+@*    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           ...
+        </li>
+    </ul>*@
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<br />
+
+<code>
+    @@page "/" <br />
+    @@attribute [Authorize]
+</code>
+
+<p>
+    将 [Authorize] 特性应用于组件的类
+</p>
+
+@code{
+    private string pageTitle = "应用属性";
+}

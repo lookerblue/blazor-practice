@@ -1,0 +1,40 @@
+﻿@page "/conditional-attribute"
+@layout Layout
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/components/?view=aspnetcore-6.0#conditional-html-element-attributes" target="_blank">link</a>
+    </p>
+@*    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           ...
+        </li>
+    </ul>*@
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<br />
+
+<label>
+    <input type="checkbox" checked="@IsCompleted" />
+    Is Completed?
+</label>
+
+<button @onclick="@(() => IsCompleted = !IsCompleted)">
+    Change IsCompleted
+</button>
+
+@code{
+    private string pageTitle = "条件 HTML 元素属性";
+
+    [Parameter]
+    public bool IsCompleted { get; set; }
+}

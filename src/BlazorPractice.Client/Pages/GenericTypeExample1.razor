@@ -1,0 +1,37 @@
+﻿@page "/generic-type-example-1"
+@layout Layout
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/components/?view=aspnetcore-6.0#generic-type-parameter-support" target="_blank">link</a>
+    </p>
+@*    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           ...
+        </li>
+    </ul>*@
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<h1>Generic Type Example 1</h1>
+
+<ListGenericTypeItems1 ExampleList="@(new List<string> { "Item 1", "Item 2" })" 
+                       TExample="string" />
+
+<ListGenericTypeItems1 ExampleList="@(new List<int> { 1, 2, 3 })" 
+                       TExample="int" />
+
+<br />
+
+@code{
+    private string pageTitle = "泛型类型参数支持";
+
+}

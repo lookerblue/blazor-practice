@@ -1,0 +1,37 @@
+﻿@page "/markup-string-example"
+@layout Layout
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/components/?view=aspnetcore-6.0#raw-html" target="_blank">link</a>
+    </p>
+@*    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           ...
+        </li>
+    </ul>*@
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<br />
+
+@((MarkupString)myMarkup)
+
+<br />
+
+@(myMarkup)
+
+@code {
+    private string pageTitle = "原始 HTML";
+
+    private string myMarkup =
+        "<p class=\"text-danger\">This is a dangerous <em>markup string</em>.</p>";
+}

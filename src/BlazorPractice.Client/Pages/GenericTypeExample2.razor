@@ -1,0 +1,39 @@
+﻿@page "/generic-type-example-2"
+@layout Layout
+
+<PageTitle>@pageTitle</PageTitle>
+
+<div class="alert alert-success">
+    <p>
+        来源：<a href="https://docs.microsoft.com/zh-cn/aspnet/core/blazor/components/?view=aspnetcore-6.0#explicit-generic-types-based-on-ancestor-components" target="_blank">link</a>
+    </p>
+@*    <h5>
+        知识点
+    </h5>
+    <ul>
+        <li>
+           ...
+        </li>
+    </ul>*@
+</div>
+
+<hr />
+
+<h1>@pageTitle</h1>
+
+<br />
+
+
+<ListGenericTypeItems2 TExample="string">
+    <ListDisplay1 ExampleList="@(new List<string> { "Item 1", "Item 2" })" />
+    <ListDisplay2 ExampleList="@(new List<string> { "Item 3", "Item 4" })" />
+</ListGenericTypeItems2>
+
+<ListGenericTypeItems2 TExample="int">
+    <ListDisplay1 ExampleList="@(new List<int> { 1, 2, 3 })" />
+    <ListDisplay2 ExampleList="@(new List<int> { 4, 5, 6 })" />
+</ListGenericTypeItems2>
+
+@code{
+    private string pageTitle = "显式泛型类型";
+}
