@@ -40,5 +40,7 @@ builder.Services.AddSingleton<TimerService>();
 
 #endregion
 
+//builder.RootComponents.RegisterForJavaScript<Coounter>(identifier: "counter");
+
 
 await builder.Build().RunAsync();
