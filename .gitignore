@@ -3,6 +3,10 @@
 /src/.vs
 /src/BlazorPractice.Client/bin
 /src/BlazorPractice.Client/obj
+/src/BlazorPractice.Client.Layout/bin
+/src/BlazorPractice.Client.Layout/obj
+/src/BlazorPractice.Client.Sample/bin
+/srcBlazorPractice.Client.Sample/obj
 /src/BlazorPractice.Shared/bin
 /src/BlazorPractice.Shared/obj
 /src/BlazorPractice.Server/bin
